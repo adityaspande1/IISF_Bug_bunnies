@@ -24,7 +24,8 @@
 
             
             <div class="header-right">
-                <a herf="#"><button class="login-button">Login</button></a>
+                <button class="login-button" id="loginButton">Login</button>
+
             </div>
         </div>
         
@@ -91,35 +92,18 @@
           </div> -->
            
         </div>
-        <div class="container-2">
-            <form action="{{ url_for('delete_files') }}" method="post">
-                <div class="table">
-                    <table>
-                        <tr class=table-headings>
-                            <td class="Select">Select</td>
-                            <td class="Filename">File Name</td>
-                            <td class="Filepath">File Path</td>
-                            <td class="delete">Delete</td>
-                        </tr>
-                        {% for file in files %}
-                            <tr>
-                                <td><input type="checkbox" name="selected_files" value="{{ file }}"></td>
-                                <td>{{ file }}</td>
-                                <td>{{ file_path }}</td>
-                                <td><a style="text-decoration: none;" href="{{ url_for('delete_file', filename=file) }}"><img src="https://cdn.iconscout.com/icon/free/png-256/free-bin-2782756-2316163.png"></a></td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                    <input type="submit" value="Delete Selected" class="delete-button">
-                </div>
-            </form>
-        </div>
+        
         
     </div>
     
     
     <div class="footer">
-        &copy; 2023 Your Company
+        &copy; 2024 BUG BUNNIES
     </div>
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function() {
+            window.location.href = '/login.html';
+        });
+    </script>
 </body>
 </html>
